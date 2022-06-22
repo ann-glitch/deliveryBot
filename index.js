@@ -1,4 +1,5 @@
-//the bot only works in a small town called Meadowfield
+/*the bot only works in a small town called Meadowfield which consists of 11 places and 14 roads.
+The roads are represented in the array below */
 
 const roads = [
   "Alice's House-Bob's House",
@@ -17,8 +18,10 @@ const roads = [
   "Shop-Town Hall",
 ];
 
+// a function that converts the list of roads to a data structure that tells us what can be reached from there for each place.
+// here, we are building a graph from the list of addresses
 function buildGraph(edges) {
-  let graph = Object.create(null);
+  let graph = Object.create(null); // null represents the absence of an object
   function addEdge(from, to) {
     if (graph[from] == null) {
       graph[from] = [to];
